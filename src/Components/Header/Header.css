@@ -1,3 +1,8 @@
+.header-container{
+    display:flex;
+    justify-content: space-between;
+}
+
 .cart-icon{
     font-size: 4em;
 }
