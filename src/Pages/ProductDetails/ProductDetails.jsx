@@ -6,6 +6,7 @@ import axios from 'axios'
 function ProductDetails() {
 
   const {productId} = useParams()
+  console.log(productId);
 
   const [product, setProduct] = React.useState ({})
 

@@ -9,14 +9,14 @@ import ProductCard from '../../Components/ProductCard/ProductCard';
 function Homepage() {
 
   const [categories, setCategories] = useState([]);
-
-  const[products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(
     ()=>{
       console.log("useEffect succeeded");
       axios.get('https://fakestoreapi.com/products/categories').then(
         res=>{
+          console.log("cata is: ")
           console.log(res.data);
           setCategories (res.data);
         }
@@ -30,19 +30,16 @@ function Homepage() {
     }, []
   )
 
-
   return (
     <div className='Homepage-container'>
       <div className="categories-container">
-        <Categories category="All"/>
+        <Categories category="All" setProducts={setProducts}/>
         {
-          // categories.map((category,index)=><p key={index}>{category}</p>)
-          categories.map((category,index)=><Categories key={index} category={category}/>)
+          categories.map((category,index)=><Categories key={index} category={category} setProducts={setProducts}/>)
         }
     </div>
     <div className="products-container">
        {
-        // products.map(product=><p key={product.id}>{product.title}</p>)
         products.map(product=><ProductCard key={product.id} product={product}/>)
       }
     </div>
