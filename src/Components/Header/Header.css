@@ -21,12 +21,12 @@
     width: 48%;
     height: 45%;
     border-radius: 50%;
-    background-color: red;
+    background-color: #F90505;
 }
 
 .cart-items p{
     position: absolute;
-    top:-25%;
+    top:20%;
     left: 35%;
     color: white;
 }

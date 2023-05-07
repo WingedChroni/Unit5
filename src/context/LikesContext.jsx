@@ -28,7 +28,10 @@ export default function LikesContextProvider (props){
 
     const removeItem = (productId) =>{
         console.log("removed", productId);
+        console.log(likes.filter(item=>item.id !== productId));
         let newLikes = likes.filter(item=>item.id !== productId);
+        console.log("new LIkes");
+        console.log(newLikes);
         setLikes (newLikes);
 
         localStorage.setItem("likesList", JSON.stringify (newLikes));
@@ -36,7 +39,7 @@ export default function LikesContextProvider (props){
     }
 
     return(
-        <LikesContext.Provider value = {{likes, addItem, removeItem}} >
+        <LikesContext.Provider value = {{likes, setLikes, addItem, removeItem}} >
             {props.children}
         </LikesContext.Provider>   
      )

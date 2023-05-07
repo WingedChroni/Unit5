@@ -21,12 +21,14 @@ function ProductCard({product}) {
         <Link to={`/product/${product.id}/details`}>
           <img src={product.image} alt="" />
         </Link>
+          <div className="heart-container">
           {
             liked?
             <FaHeart className='heart-icon' onClick={()=>removeItem(product.id)}/>
             :
             <FaRegHeart className='heart-icon' onClick={()=>addItem(product)}/>
           }
+          </div>
         </div>
         <div className="product-overview">
           <p>{product.title}</p>

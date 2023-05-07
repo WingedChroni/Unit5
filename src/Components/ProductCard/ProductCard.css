@@ -57,11 +57,23 @@
     margin-bottom: 10px;
 }
 
-
-.heart-icon{
+.heart-container{
+    text-align: center;
     position: absolute;
     top: 5px;
     right: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.heart-icon{
+    /* position: absolute;
+    top: 5px;
+    right: 5px; */
+    margin-top: 3px;
     font-size: 20px;
-    color: red;
+    color: #3A4895;
+    z-index: 2;
 }
