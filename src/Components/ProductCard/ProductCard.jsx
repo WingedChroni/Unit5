@@ -1,16 +1,40 @@
-import React from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import "./ProductCard.css"
+import { Link } from 'react-router-dom'
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { LikesContext } from '../../context/LikesContext';
+
 
 function ProductCard({product}) {
+
+  const {likes, addItem, removeItem} = useContext(LikesContext);
+
+  const [liked, setLiked] = useState (false);
+
+  useEffect(()=>{
+    setLiked (likes.find(item=>item.id===product.id))
+  }, [likes])
+
   return (
-    <a href={`/product/${product.id}/details`}>
-      <div className='product-card'>
+    <div className='product-card'>
+        <div className="image-container">
+        <Link to={`/product/${product.id}/details`}>
           <img src={product.image} alt="" />
+        </Link>
+          {
+            liked?
+            <FaHeart className='heart-icon' onClick={()=>removeItem(product.id)}/>
+            :
+            <FaRegHeart className='heart-icon' onClick={()=>addItem(product)}/>
+          }
+        </div>
+        <div className="product-overview">
           <p>{product.title}</p>
-          <p>{product.description}</p>
-          <p>{product.price}</p>
-      </div>
-    </a>
+          <span>{product.category}</span>
+          {/* <p>{product.description}</p> */}
+          <p>{product.price}€</p>
+        </div>
+    </div>
   )
 }
 

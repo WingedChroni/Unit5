@@ -6,3 +6,27 @@
 .cart-icon{
     font-size: 4em;
 }
+
+.cart-container{
+    /* display:flex; */
+    position: relative;
+}
+
+.cart-items{
+    /* display: flex; */
+    position: absolute;
+    top: 0%;
+    left: 35%;
+    bottom: 0px;
+    width: 48%;
+    height: 45%;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.cart-items p{
+    position: absolute;
+    top:-25%;
+    left: 35%;
+    color: white;
+}
