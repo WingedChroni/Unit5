@@ -32,7 +32,7 @@ function ProductCard({product}) {
         </div>
         <div className="product-overview">
           <p>{product.title}</p>
-          <span>{product.category}</span>
+          <p>{product.category}</p>
           {/* <p>{product.description}</p> */}
           <p>{product.price}€</p>
         </div>
