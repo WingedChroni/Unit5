@@ -13,6 +13,8 @@
 .details-image-container{
     flex: 1;
     padding: 1em;
+    display: flex;
+    align-items: center;
 }
 
 .details-image-container img{
@@ -20,8 +22,10 @@
 }
 
 .product-info{
+    /* display: flex;
+    flex-direction: column; */
     flex: 1;
-    padding:8%;
+    padding:6%;
 }
 
 .product-info h2{
@@ -51,4 +55,19 @@
     text-align: center;
     background-color: #FFD814;
     border:none;
+}
+
+@media only screen and (max-width: 744px){
+    .details-container{
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .details-image-container{
+        width:50%;
+    }
+    .details-button-container{
+        display: flex;
+        justify-content: center;
+    }
 }

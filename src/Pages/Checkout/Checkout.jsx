@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import "./Checkout.css";
 import { LikesContext } from "../../context/LikesContext";
 import PurchaseCard from "../../Components/PurchaseCard/PurchaseCard";
-import  Modal from "react-modal";
+import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 function Checkout() {
 	const { likes, removeItem } = useContext(LikesContext);
@@ -45,6 +46,11 @@ function Checkout() {
 		setTotal(temp);
 	}, [likes]);
 
+	const backToMain = () => {
+		<Link to="/"></Link>;
+		setIsOpen(false);
+	};
+
 	return (
 		<div className="checkout-container">
 			<div className="headers">
@@ -67,37 +73,31 @@ function Checkout() {
 				<p>Total </p>
 				<p>{total}€</p>
 			</div>
-      <button onClick={()=>setIsOpen(true)}>Checkout</button>
+			<div className="checkout-button-container">
+				<button onClick={() => setIsOpen(true)}>Checkout</button>
+			</div>
 			<Modal
 				isOpen={isOpen}
 				onRequestClose={() => setIsOpen(false)}
 				style={customStyles}
 				contentLabel="Contact Us Modal"
 			>
-				{/* <div className="modal-header">
-					<h2>Contact Us</h2>
-					<button className="modal-close-btn" onClick={() => setIsOpen(false)}>
-						X
-					</button>
-				</div> */}
-				{/* <form>
-					<label htmlFor="name">Name</label>
-					<input type="text" id="name" />
-
-					<label htmlFor="email">Email</label>
-					<input type="email" id="email" />
-
-					<label htmlFor="message">Message</label>
-					<textarea id="message" rows="4"></textarea>
-					<button type="submit">Send</button>
-				</form> */}
-        <div className="popup">
-          <h2>Your Order was Successful!</h2>
-          <h2>Check your email for the order confirmation. Thank you for shopping with Fake Store!</h2>
-          <button className="modal-close-btn" onClick={() => setIsOpen(false)}>
-						Return to Main Page
-					</button>
-        </div>
+				<div className="popup">
+					<h2>Your Order was Successful!</h2>
+					<h2>
+						Check your email for the order confirmation. Thank you for shopping
+						with Fake Store!
+					</h2>
+					<Link to="/">
+						{/* Button and OnClick might be unnecessary with Link */}
+						<button
+							className="modal-close-btn"
+							onClick={() => setIsOpen(false)}
+						>
+							Return to Main Page
+						</button>
+					</Link>
+				</div>
 			</Modal>
 		</div>
 	);

@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <div className='header-container'>
-        <Link to="/" style={{marginRight:"10px", fontSize: "36px"}}>Fake Store</Link>
+        <Link to="/" style={{fontWeight: "700",fontSize: "24px"}}>Fake Store</Link>
 
           <Link to="/checkout" className="cart-container">
             <AiOutlineShoppingCart className="cart-icon"/>

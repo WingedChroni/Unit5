@@ -1,10 +1,11 @@
-.category{
-    text-decoration: none;
-    margin-left: 10%;
-    gap: 20px;
-    /* background-color: tomato; */
-}
+/* .category{
+    text-decoration: none; */
+    /* margin-right: 6%; */
+    /* gap: 20px; */
+    /* background-color: tomato;
+} */
 
 .category p{
+    color: #3A4895;
     cursor: pointer;
 }

@@ -1,11 +1,10 @@
 .product-card{
     margin:10px;
     width:200px;
-    height: 260px; 
+    height: 275px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-between; */
     padding-bottom:10px;
     border-radius:8px;
     box-shadow: 7px 8px 13px -4px rgba(0,0,0,0.47);
@@ -19,7 +18,7 @@
 }
 
 .image-container{
-    margin-top: 12px;
+    margin: 12px 0 5px 0;
     position: relative;
     width: 160px;
     height: 153px;
@@ -77,4 +76,6 @@
     font-size: 20px;
     color: #3A4895;
     z-index: 2;
+    cursor: pointer;
+    /* background-color: white; */
 }

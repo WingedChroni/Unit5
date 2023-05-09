@@ -2,6 +2,7 @@ import React from 'react'
 import "./Footer.css"
 import {AiFillHeart} from "react-icons/ai"
 import Modal from 'react-modal'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -26,8 +27,8 @@ function Footer() {
   return (
     <div className="footer-container">
         <p>Made with <AiFillHeart/> by mimo</p>
-        {/* <a href="">Contact Us</a> */}
-        <button className='contact-btn'
+        <Link to="/contact">Contact Us</Link>
+        {/* <button className='contact-btn'
          onClick={()=>setIsOpen(true)}>Contact Us</button>
         <Modal
         isOpen={isOpen}
@@ -50,7 +51,7 @@ function Footer() {
           <textarea id="message" rows="4"></textarea>
           <button type="submit">Send</button>
         </form>
-      </Modal>
+      </Modal> */}
     </div>
   )
 }

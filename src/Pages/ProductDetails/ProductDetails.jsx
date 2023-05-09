@@ -44,18 +44,17 @@ function ProductDetails() {
          <img src={product?.image} alt="" />
       </div>
       <div className="product-info">
-            <h1>{product?.id}</h1>
             <h2>{product?.title}</h2>
             <h2>{product?.price}€</h2>
             <h3>Description</h3>
             <p>{product?.description}</p>
-            {/* <button> */}
+            <div className="details-button-container">
               {
                 addOrRemove?
                 <button onClick={()=>removeItem(product.id)}>Remove from Cart</button>:<button onClick={()=>addItem(product)}>Add to Cart</button>
               }
+            </div>
 
-            {/* </button> */}
       </div>
       
     </div>
