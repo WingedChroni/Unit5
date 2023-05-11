@@ -1,45 +1,77 @@
-.purchase-card{
-    padding: 20px 0 ;
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #D9D9D999;
-    /* justify-content: space-between; */
-    font-size: 24px;
-    font-weight: 600;
-    background-color: white;
+.purchase-card {
+	padding: 20px 0;
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid #d9d9d999;
+	/* justify-content: space-between; */
+	font-size: 20px;
+	font-weight: 600;
+	background-color: white;
 }
 
-.purchase-card p:nth-child(3){
-    /* background-color: blue; */
-    margin-left: 3%;
-    flex-basis: 15%;
-}
-.purchase-card p:nth-child(4){
-    /* background-color: blue; */
-    margin-left: 8%;
-    flex-basis: 5%;
-    /* font-size:100px; */
+.purchase-info-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-basis: 85%;
+	/* background-color: blue; */
 }
 
-.product-name-container{
-    flex-basis: 33%;
-    margin-left: 2%;
-    /* background-color: violet; */
+.purchase-card p:nth-child(3) {
+	/* background-color: blue; */
+	margin-left: 4%;
+	flex-basis: 15%;
+}
+.purchase-card p:nth-child(4) {
+	/* background-color: blue; */
+	margin-left: 5%;
+	flex-basis: 5%;
+	/* font-size:100px; */
 }
 
-.preview-container{
-    display: flex;
-    justify-content: center;
-    margin: 0 2%;
-    flex-basis: 15%;
+.product-name-container {
+	flex-basis: 33%;
+	margin-left: 2%;
+	/* background-color: violet; */
 }
 
-.preview-container img{
-    width: 80%;
+.preview-container {
+	display: flex;
+	justify-content: center;
+	margin: 0 2%;
+	flex-basis: 15%;
 }
 
-.trash-icon{
-    /* background-color: blue; */
-    flex-basis: 5%;
-    margin-left: 5%;
+.preview-container img {
+	width: 80%;
+}
+
+.trash-icon {
+	/* background-color: blue; */
+	flex-basis: 15%;
+	margin-right: 2%;
+}
+
+/* @media only screen and (max-width: 748px){
+
+} */
+
+@media only screen and (max-width: 560px) {
+	.purchase-card {
+		justify-content: center;
+		align-items: end;
+	}
+
+	.purchase-info-container {
+		margin-left: 15%;
+		flex-direction: column;
+		flex-basis: auto;
+		width: 40%;
+		text-align: center;
+	}
+
+	.purchase-info-container p {
+		padding-bottom: 4%;
+		/* background-color: blueviolet; */
+	}
 }

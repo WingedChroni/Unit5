@@ -1,25 +1,25 @@
-.contact-container{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
+.contact-container {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
 	/* height: 80%; */
 	min-height: 783px;
 	margin: 100px auto;
-    background-color: white;
-    text-align: center;
+	background-color: white;
+	text-align: center;
 }
 
-.contact-container h2{
-    margin: 67px 0 48px 0;
-    font-size: 32px;
-    font-weight: 700;
-    color: #282828;
+.contact-container h2 {
+	margin: 67px 0 48px 0;
+	font-size: 32px;
+	font-weight: 700;
+	color: #282828;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /* form label {
@@ -27,11 +27,9 @@ form{
 	margin-bottom: 10px;
 } */
 
-
-
 form input,
 form textarea {
-    background-color: #B4B4B4;
+	background-color: #b4b4b4;
 	width: 50%;
 	padding: 10px;
 	border: none;
@@ -41,9 +39,9 @@ form textarea {
 	font-size: 16px;
 }
 
-form ::placeholder{
-    color:white;
-    /* opacity: 1; */
+form ::placeholder {
+	color: white;
+	/* opacity: 1; */
 }
 /* form input:focus,
 form textarea:focus {
@@ -52,8 +50,8 @@ form textarea:focus {
 } */
 
 form button[type="submit"] {
-    margin-top: 12px;
-	background-color: #5264C3;
+	margin-top: 12px;
+	background-color: #5264c3;
 	color: white;
 	border: none;
 	border-radius: 5px;
@@ -61,4 +59,10 @@ form button[type="submit"] {
 	font-size: 16px;
 	cursor: pointer;
 	transition: background-color 0.3s ease-in-out;
-} 
+}
+
+@media only screen and (max-width: 950px) {
+	.contact-container {
+		width: 90%;
+	}
+}

@@ -12,6 +12,7 @@
 	display: flex;
 	padding: 12px 0;
 	/* background-color: pink; */
+	justify-content: space-around;
 	font-size: 20px;
 	font-weight: 600;
 	color: #979797;
@@ -20,25 +21,26 @@
 
 .headers p:first-child {
 	margin-left: 6%;
-	flex-basis: 50%;
+	flex-basis: 45%;
 	/* background-color: coral; */
 }
 
 .headers p:nth-child(2) {
-	margin-left: 4%;
-	flex-basis: 11%;
+	/* margin-left: 7%; */
+	flex-basis: 10%;
 	/* background-color: yellow; */
 }
 
 .headers p:nth-child(3) {
-	/* flex-basis: 5%; */
-	margin-right: 2%;
+	flex-basis: 5%;
+	margin-left: 2%;
 	/* background-color: tomato; */
 }
 
 .headers p:nth-child(4) {
+	margin: 0 2%;
 	flex-basis: 5%;
-	/* background-color: yellow; */
+	background-color: yellow;
 }
 
 .total-container {
@@ -50,8 +52,8 @@
 	margin: 2% 7% 7% 0;
 }
 
-.checkout-button-container{
-	display:flex;
+.checkout-button-container {
+	display: flex;
 	justify-content: right;
 	padding-bottom: 2%;
 }
@@ -69,42 +71,55 @@
 	margin-right: 2em;
 }
 
-.popup{
-    width: 600px;
-    height: 540px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+.popup {
+	width: 45vw;
+	height: 540px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
 }
 
-.popup h2{
-    margin-bottom: 80px;
-
+.popup h2 {
+	margin-bottom: 80px;
 }
 
 .modal-close-btn {
-    width: 156px;
+	width: 156px;
 	height: 41px;
 	font-size: 14px;
 	font-weight: 700;
 	text-align: center;
-	background-color: #5264C3;
+	background-color: #5264c3;
 	border: none;
 	/* background: none; */
-    color:white;
+	color: white;
 	cursor: pointer;
 	transition: color 2s ease-in-out;
 }
 
 .modal-close-btn:hover {
-
 	color: red;
 }
 
-@media only screen and (max-width: 744px){
-	.checkout-container{
+.modal-content {
+	border: 2px solid;
+	resize: both;
+	overflow: auto;
+}
+
+@media only screen and (max-width: 950px) {
+	.checkout-container {
 		width: 95%;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	.headers {
+		visibility: collapse;
+	}
+	.purchase-container {
+		border-top: 2px solid #d9d9d999;
 	}
 }

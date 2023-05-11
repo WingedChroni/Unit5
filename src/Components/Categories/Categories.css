@@ -1,11 +1,4 @@
-/* .category{
-    text-decoration: none; */
-    /* margin-right: 6%; */
-    /* gap: 20px; */
-    /* background-color: tomato;
-} */
-
-.category p{
-    color: #3A4895;
-    cursor: pointer;
+.category p {
+	color: #3a4895;
+	cursor: pointer;
 }

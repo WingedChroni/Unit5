@@ -6,13 +6,18 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom";
 
 function Checkout() {
-	const { likes, removeItem } = useContext(LikesContext);
+	const { likes, setLikes } = useContext(LikesContext);
 
 	const [products, setProducts] = useState([]);
 
 	const [total, setTotal] = useState(0);
 
-	const [isOpen, setIsOpen] = React.useState(false);
+	const [isOpen, setIsOpen] = useState(false);
+
+	const resetCart = ()=>{
+		setLikes ([]);
+		setIsOpen(true);
+	}
 
 	const customStyles = {
 		content: {
@@ -39,17 +44,10 @@ function Checkout() {
 		setProducts(likes);
 		let temp = 0;
 		for (let items of likes) {
-			console.log(items);
 			temp += items.price;
 		}
-		console.log(`temp is ${temp}`);
 		setTotal(temp);
 	}, [likes]);
-
-	const backToMain = () => {
-		<Link to="/"></Link>;
-		setIsOpen(false);
-	};
 
 	return (
 		<div className="checkout-container">
@@ -60,27 +58,24 @@ function Checkout() {
 				<p>Remove</p>
 			</div>
 			<div className="purchase-container">
-				{console.log("check 123")}
-				{console.log(products)}
-				{
-					// console.log("done");
-					products.map((product) => (
-						<PurchaseCard key={product.id} product={product} />
-					))
-				}
+				{products.map((product) => (
+					<PurchaseCard key={product.id} product={product} />
+				))}
 			</div>
 			<div className="total-container">
 				<p>Total </p>
 				<p>{total}€</p>
 			</div>
 			<div className="checkout-button-container">
-				<button onClick={() => setIsOpen(true)}>Checkout</button>
+				{/* <button onClick={() => setIsOpen(true)}>Checkout</button> */}
+				<button onClick={resetCart}>Checkout</button>
 			</div>
 			<Modal
 				isOpen={isOpen}
 				onRequestClose={() => setIsOpen(false)}
 				style={customStyles}
 				contentLabel="Contact Us Modal"
+				contentClassName="shrink"
 			>
 				<div className="popup">
 					<h2>Your Order was Successful!</h2>
